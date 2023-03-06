@@ -25,10 +25,11 @@ input{width:470px;height:200px;background:#000;color:#fff}
 </style>
 <p>Add inputs to get a command to spawn weapons. Second field is your USERID which is the first column # in 'status' command's reply.</br>
 Acceptable entries are CASE-SENSITIVE weapon names which should not have "The" or item indexes.</p>
-<p>We'd have put this in a console echo if tf2 didn't fuck it up but this is faster anyway.</p><textarea id="chungus"onClick="this.select();"style="width:100%;height:190px;background:#0c0c0c;color:#1f8807;display:none;resize:none"></textarea>
+<p>We'd have put this in a console echo if tf2 didn't fuck it up but this is faster anyway.</p>
+<textarea id="chungus"onClick="this.select();"style="width:470px;height:190px;position:fixed;right:0;bottom:0;background:#0c0c0c;color:#1f8807;resize:none"></textarea>
 
 <input id="WEPON"type="text"value=""placeholder="Brass Beast"><input id="IDNUMBER"type="number"value=""placeholder="UserID #"></br>
-<button id="COPYD" style="width:100%;height:190px;background:#000;color:#fff"onclick="d()">COPY</button>
+<button id="COPYD" style="width:470px;height:190px;background:#000;color:#fff"onclick="d()">COPY</button>
 
 <script>
 var WEPIN = document.getElementById("WEPON");
@@ -58,9 +59,7 @@ function d() {
 		
 		}
 	}
-	document.getElementById("chungus").style.display = "block";
 	document.getElementById("chungus").innerHTML=(quotes);
-	document.getElementById("COPYD").replaceWith(document.getElementById("chungus"));
 }
 </script>
 </div>
