@@ -1,0 +1,66 @@
+<style>
+*{margin:0;border-color:#0c0c0c}
+iframe:nth-child(2),iframe:nth-child(4)
+</style>
+<form id="myForm"action="https://duckduckgo.com/">
+<input autofocus type="text"name="q"placeholder="Search{"style="position:fixed;width:938px;height:442px;background:#000;color:#288032">
+<input hidden type="button"onclick="document.getElementById(\"myForm\").submit();" >
+</form>
+
+<iframe width="938"height="442"
+style="position:fixed;right:0;background-color:#000;"
+src="https://www.steamidfinder.com/#steamid">
+</iframe>
+
+<iframe width="1254"height="590"
+style="position:fixed;bottom:0;left:0;margin:0 0 -146px 0;-webkit-transform:scale(.75);transform: scale(.75);-webkit-transform-origin:0 0;transform-origin:0 0"
+src="https://wiki.alliedmods.net/Team_Fortress_2_Item_Definition_Indexes#toc">
+</iframe>
+
+<div width="938"height="441"
+style="position:fixed;bottom:0;right:0">
+<style>
+body{margin:0;border:0;color:#eee}
+input{width:470px;height:200px;background:#000;color:#fff}
+</style>
+<p>Add inputs to get a command to spawn weapons. Second field is your USERID which is the first column # in 'status' command's reply.</br>
+Acceptable entries are CASE-SENSITIVE weapon names which should not have "The" or item indexes.</p>
+<p>We'd have put this in a console echo if tf2 didn't fuck it up but this is faster anyway.</p><textarea id="chungus"onClick="this.select();"style="width:100%;height:190px;background:#0c0c0c;color:#1f8807;display:none;resize:none"></textarea>
+
+<input id="WEPON"type="text"value=""placeholder="Brass Beast"><input id="IDNUMBER"type="number"value=""placeholder="UserID #"></br>
+<button id="COPYD" style="width:100%;height:190px;background:#000;color:#fff"onclick="d()">COPY</button>
+
+<script>
+var WEPIN = document.getElementById("WEPON");
+var changer = document.getElementById("chungus")
+function isInt(value) {
+  var x;
+  return isNaN(value) ? !1 : (x = parseFloat(value), (0 | x) === x);
+}
+
+function d() {
+	WEPIN.select();
+	WEPIN.setSelectionRange(0, 99999); // For mobile devices
+	if (IDNUMBER.value) {
+		if (isInt(WEPIN.value)) {
+			var quotes = ("script GetPlayerFromUserID(" + (IDNUMBER.value) + ").GiveWeapon(" + (WEPIN.value) + ")");
+		}
+		else {
+			var quotes = ("script GetPlayerFromUserID(" + (IDNUMBER.value) + ").GiveWeapon(\"" + (WEPIN.value) + "\")");
+		}
+	}
+	else {
+		if (isInt(WEPIN.value)) {
+			var quotes = ("script GetListenServerHost().GiveWeapon(" + (WEPIN.value) + ")");
+		}
+		else {
+			var quotes = ("script GetListenServerHost().GiveWeapon(\"" + (WEPIN.value) + "\")");
+		
+		}
+	}
+	document.getElementById("chungus").style.display = "block";
+	document.getElementById("chungus").innerHTML=(quotes);
+	document.getElementById("COPYD").replaceWith(document.getElementById("chungus"));
+}
+</script>
+</div>
